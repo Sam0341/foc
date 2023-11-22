@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoC</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        body {
+            text-align: center;
+            background: url('bg.jpg') center/cover no-repeat fixed;
+            color: black; /* Set text color to black */
+        }
+
+        section {
+            margin: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+        }
+
+        hr {
+            border: 1px solid black;
+        }
+
+        .box {
+            padding: 5px;
+            background-color: white;
+            color: black;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #4C8BF5;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        table {
+            border: 1px solid black;
+            margin: auto;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        img {
+            width: 700px;
+            height: 400px;
+        }
+
+        center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h2>Project 1: UNICODE</h2>
+        <hr>
+        <center>
+            <p>Please input UNICODE number:</p>
+            <input id="numb" class="box" type="text">
+            <button type="button" onclick="myFunction()">Submit</button>
+            <br>
+            <table>
+                <tr>
+                    <th>
+                        <center><p id="outputBox" class="box"></p></center>
+                    </th>
+                </tr>
+            </table>
+            <p><img src="uni1.jpg"></p>
+            <p><img src="uni3.jpg"></p>
+            <p><img src="uni4.jpg"></p>
+        </center>
+        <script>
+            function myFunction() {
+                var x = document.getElementById("numb").value;
+                document.getElementById("outputBox").innerHTML = "&#x" + x;
+            }
+        </script>
+    </section>
+    <a href="index.html">Back to Home</a>
+    <footer>
+        <p>@ Powered by UB</p>
+    </footer>
+</body>
+
+</html>
+

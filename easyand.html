@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('bg.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            text-align: center;
+            height: 100%;
+        }
+
+        h2, p {
+            color: white; 
+        }
+
+        button {
+            width: 150px;
+            height: 40px;
+            margin: 10px 0;
+            background-color: #4C8BF5;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        img {
+            display: block;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        a {
+            color: #4C8BF5;
+            text-decoration: none;
+            display: block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Final Project AND Logic Gate</h2>
+
+    <p>This is an animation of an AND Logic Gate</p>
+
+    <button onclick="document.getElementById('myImage').src='and2off.PNG'">0 AND 0</button>
+    <button onclick="document.getElementById('myImage').src='andoffon.PNG'">0 AND 1</button>
+    <button onclick="document.getElementById('myImage').src='andonoff.PNG'">1 AND 0</button>
+    <button onclick="document.getElementById('myImage').src='and2on.png'">1 AND 1</button>
+
+    <img id="myImage" src="and2off.PNG">
+
+    <a href="index.html">Back to Home</a>
+
+</body>
+
+</html>

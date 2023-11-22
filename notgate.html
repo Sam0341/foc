@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>FoC</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-image: url('bg.jpg'); 
+            background-size: cover;
+            background-position: center;
+        }
+
+        section {
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white; 
+            padding: 20px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+        }
+
+        .column {
+            flex: 1;
+            background-color: #aaa;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section>
+        <h2>Project 1: Not Gate</h2>
+
+        <div class="row">
+            <div class="column">
+                <h2>Input</h2>
+                <p><button style="width: 100px; height: 40px;"
+                        onclick="document.getElementById('belizeImage').src='noton2.png'">ON</button></p>
+                <p><button style="width: 100px; height: 40px;"
+                        onclick="document.getElementById('belizeImage').src='notoff2.png'">OFF</button></p>
+            </div>
+            <div class="column">
+                <h2>Output</h2>
+                <hr>
+                <img id="belizeImage" src="noton2.png" alt="noton" width="400" height="86">
+            </div>
+        </div>
+
+        <a href="index.html">Back to Home</a>
+    </section>
+
+    <footer>
+        <p>@ Powered by UB</p>
+    </footer>
+
+</body>
+
+</html>
+
