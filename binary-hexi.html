@@ -1,73 +1,94 @@
 <!DOCTYPE html>
 <html>
+
+<head>
+    <title>Binary, Decimal, and Hexadecimal Converter</title>
+    <style>
+        body {
+            font-family: 'Old Standard TT', serif;
+            background: url('bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-items: center;
+            justify-content: space-evenly;
+        }
+
+        .output {
+            margin: 1rem;
+            font-size: 1.4rem;
+            color: rgb(0, 0, 0);
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            width: 250px;
+        }
+
+        @media only screen and (max-width: 1000px) {
+            .container {
+                display: grid;
+                grid-template-columns: 1fr;
+                justify-content: center;
+            }
+
+            h1,
+            h2 {
+                font-size: 1.1rem;
+            }
+        }
+
+        .btn {
+            padding: 10px 5px;
+            font-size: 1rem;
+            background: rgb(50, 101, 196);
+            color: rgba(255, 255, 255, 0.726);
+            outline: none;
+            border: none;
+            margin: .4em 0;
+            width: 100%;
+            transition: background-color .2s ease-in-out;
+        }
+
+        .btn:last-child {
+            background: rgb(39, 66, 155);
+        }
+
+        .btn:hover {
+            background: rgb(139, 156, 214);
+            color: rgba(0, 0, 0, 0.788);
+        }
+
+        .btns {
+            display: flex;
+            width: 100%;
+        }
+		
+		.footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(0, 129, 255, 0.4);
+            color: white;
+            text-align: center;
+            font-size: 15px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
 <body>
-    <h1 class="title">Binary, Decimal and Hexidecimal Converter</h1>
+    <h1 class="title">Binary, Decimal, and Hexadecimal Converter</h1>
     <div class="container">
-	<style>
-	html {
-    font-family: 'Old Standard TT', serif;
-    background: rgba(0, 79, 192, 0.1);
-    min-height: 200px;
-    text-align: center;
-}
-
-.output {
-    margin: 1rem;
-    font-size: 1.4rem;
-    color: rgb(0, 0, 0)
-}
-
-.section {
-    display: flex;
-    flex-direction: column;
-    width: 250px;
-}
-
-.container {
-    display: flex;
-    flex-direction: row;
-    justify-items: center;
-    justify-content: space-evenly;
-	
-}
-
-@media only screen and (max-width: 1000px) {
-    .container {
-        display: grid;
-        grid-template-columns: 1fr;
-        justify-content: center;
-    }
-
-    h1, h2 {
-        font-size: 1.1rem;
-    }
-}
-
-.btn {
-    padding: 10px 5px;
-    font-size: 1rem;
-    background: rgb(50, 101, 196);
-    color: rgba(255, 255, 255, 0.726);
-    outline: none;
-    border: none;
-    margin: .4em 0;
-    width: 100%;
-    transition: background-color .2s ease-in-out;
-}
-
-.btn:last-child {
-    background: rgb(39, 66, 155);
-}
-
-.btn:hover {
-    background: rgb(139, 156, 214); 
-    color: rgba(0, 0, 0, 0.788);
-}
-.btns {
-    display: flex;
-    width: 100%;
-}
-	</style>
         <div class="section">
             <div class="heading">
                 <h2>Binary</h2>
@@ -80,21 +101,21 @@
             </div>
         </div>
         <div class="section">
-           <div class="heading">
+            <div class="heading">
                 <h2>Decimal</h2>
                 <span class="output" id="dOutput"></span>
-           </div>
-           <input type="text" name="decimal" id="decimal">
-           <div class="btns">
+            </div>
+            <input type="text" name="decimal" id="decimal">
+            <div class="btns">
                 <button class="btn" id="dToB">To Binary</button>
-                <button class="btn" id="dToH">To Hex</button>  
-           </div>
+                <button class="btn" id="dToH">To Hex</button>
+            </div>
         </div>
         <div class="section">
             <div class="heading">
-                    <h2>Hexadecimal</h2>
-                    <span class="output" id="hOutput"></span>
-                </div>
+                <h2>Hexadecimal</h2>
+                <span class="output" id="hOutput"></span>
+            </div>
             <input type="text" name="hexadecimal" id="hexadecimal">
             <div class="btns">
                 <button class="btn" id="hToB">To Binary</button>
@@ -102,25 +123,11 @@
             </div>
         </div>
     </div>
-	<script src="hexi-binjs.js"></script>
-	
-	
-</body>
-<style>
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: rgba(0, 129, 255, 0.4);
-  color: white;
-  text-align: center;
-  font-size: 15px;
-  padding: 10px;
-}
-</style>
+    <script src="hexi-binjs.js"></script>
 
-<div class="footer">
-  <p> @ Powered by UB Group_</p>
-</div>
+    <div class="footer">
+        <p> @ Powered by UB Group_</p>
+    </div>
+</body>
+
 </html>
