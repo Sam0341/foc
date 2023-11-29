@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Order</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        #menu-container {
+            text-align: left;
+            margin: 0 auto;
+            width: 50%;
+        }
+
+        #total-price {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Menu Order</h1>
+
+    <div id="menu-container">
+        <h2>My Menu</h2>
+        <ul id="menu-list"></ul>
+
+        <label for="item-selection">Enter the number of the item you want to order: </label>
+        <input type="number" id="item-selection">
+        <button onclick="addToOrder()">Add to Order</button>
+
+        <div id="order-summary"></div>
+        <div id="total-price"></div>
+    </div>
+
+    <script>
+        const menu = [
+            { name: "Hot and Spicy Wings", price: 10.00 },
+            { name: "Buffalo Wings", price: 10.00 },
+            { name: "Large Soda", price: 6.00 },
+            { name: "Small Soda", price: 3.50 },
+            { name: "Crispy Wings", price: 11.00 },
+            { name: "Honey Mustard Wings", price: 11.00 }
+        ];
+
+        let order = [];
+        let total_price = 0.0;
+
+        function displayMenu() {
+            const menuList = document.getElementById("menu-list");
+            menuList.innerHTML = "";
+
+            menu.forEach((item, index) => {
+                const listItem = document.createElement("li");
+                listItem.textContent = `${index + 1}: ${item.name} = $${item.price}`;
+                menuList.appendChild(listItem);
+            });
+        }
+
+        function addToOrder() {
+            const selectionInput = document.getElementById("item-selection");
+            const selection = parseInt(selectionInput.value);
+
+            if (isNaN(selection)) {
+                alert("Please enter a valid number.");
+                return;
+            }
+
+            if (selection === -1) {
+                displayOrderSummary();
+                return;
+            }
+
+            if (selection < 1 || selection > menu.length) {
+                alert("Invalid selection. Please try again.");
+                return;
+            }
+
+            const selectedItem = menu[selection - 1];
+            order.push(selectedItem);
+            total_price += selectedItem.price;
+
+            displayOrderSummary();
+            selectionInput.value = "";
+        }
+
+        function displayOrderSummary() {
+            const orderSummary = document.getElementById("order-summary");
+            const totalPriceElement = document.getElementById("total-price");
+
+            orderSummary.innerHTML = "<h2>Your Order:</h2>";
+            order.forEach(item => {
+                const itemDiv = document.createElement("div");
+                itemDiv.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+                orderSummary.appendChild(itemDiv);
+            });
+
+            totalPriceElement.textContent = `Total Price: $${total_price.toFixed(2)}`;
+        }
+
+        displayMenu();
+    </script>
+
+</body>
+</html>

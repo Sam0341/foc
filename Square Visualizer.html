@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square Visualizer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        #square-container {
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .square-row {
+            display: flex;
+        }
+
+        .square-cell {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #000;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .filled {
+            background-color: #000;
+            color: #fff;
+        }
+
+        #retry-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Square Visualizer</h1>
+
+    <div>
+        <button id="retry-button" onclick="retry()">Retry</button>
+    </div>
+
+    <div id="square-container"></div>
+
+    <script>
+        function createSquare(height, width) {
+            const squareContainer = document.getElementById("square-container");
+
+            if (height <= 0 || width <= 0) {
+                squareContainer.innerHTML = "<p>Invalid dimensions. Please enter positive integers for height and width.</p>";
+                return;
+            }
+
+            let squareHTML = "";
+
+            for (let i = 0; i < height; i++) {
+                squareHTML += '<div class="square-row">';
+                for (let j = 0; j < width; j++) {
+                    const isBorder = i === 0 || i === height - 1 || j === 0 || j === width - 1;
+                    const isCenter = i > 0 && i < height - 1 && j > 0 && j < width - 1;
+                    const cellClass = isBorder ? 'filled' : (isCenter ? 'center' : '');
+                    squareHTML += `<div class="square-cell ${cellClass}">*</div>`;
+                }
+                squareHTML += '</div>';
+            }
+
+            squareContainer.innerHTML = squareHTML;
+        }
+
+        function retry() {
+            const height = parseInt(prompt("Enter the height of the square:"));
+            const width = parseInt(prompt("Enter the width of the square:"));
+            createSquare(height, width);
+        }
+
+        // Initial square creation
+        const initialHeight = 5;
+        const initialWidth = 5;
+        createSquare(initialHeight, initialWidth);
+    </script>
+
+</body>
+
+</html>
